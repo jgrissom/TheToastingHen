@@ -9,7 +9,7 @@
     </title>
     <meta
       name="description"
-      content="Scratch toast, clean-label chicken salad tartines, and signature Door County tart cherry lemonade at Oak Creek and Greenfield farmers markets. No peanut or tree nut ingredients."
+      content="Scratch toast, clean-label chicken salad tartines, and signature Door County tart cherry lemonade at Summer 2027 farmers markets in Southeastern Milwaukee County. No peanut or tree nut ingredients."
     />
     <link rel="canonical" href="https://thetoastinghen.com/" />
     <meta property="og:type" content="website" />
@@ -36,21 +36,7 @@
         "telephone": "",
         "servesCuisine": ["American", "Artisan Sandwiches", "Chicken Salad"],
         "priceRange": "$$",
-        "hasMenu": "https://thetoastinghen.com/#menu",
-        "openingHoursSpecification": [
-          {
-            "@type": "OpeningHoursSpecification",
-            "dayOfWeek": "Saturday",
-            "opens": "09:00",
-            "closes": "13:00"
-          },
-          {
-            "@type": "OpeningHoursSpecification",
-            "dayOfWeek": "Sunday",
-            "opens": "10:00",
-            "closes": "14:00"
-          }
-        ]
+        "hasMenu": "https://thetoastinghen.com/#menu"
       }
     </script>
 
@@ -203,7 +189,7 @@
               <a class="th-nav-link" href="#menu">Menu</a>
               <a class="th-nav-link" href="#lemonade">Craft Lemonade</a>
               <a class="th-nav-link" href="#tubs">Pre-Order Tubs</a>
-              <a class="th-nav-link" href="#circuit">Market Circuit</a>
+              <a class="th-nav-link" href="#circuit">The Weekly Drop</a>
               <a class="th-nav-link" href="#sourcing"
                 >Sourcing &amp; Allergen Info</a
               >
@@ -820,7 +806,7 @@
                   <span style="color: #d49a3d; font-weight: 700">✓</span
                   ><span
                     ><strong>Morning Anchor:</strong> Fresh cups pour right at
-                    9:00 AM market open alongside warm golden conveyor
+                    market open alongside warm golden conveyor
                     toast.</span
                   >
                 </div>
@@ -964,7 +950,7 @@
                     letter-spacing: -0.01em;
                     line-height: 1.2;
                   "
-                  >8 oz Market Tubs
+                  >8 oz Deli Tubs (Pre-Order Only)
                   <span
                     style="
                       font-family: &quot;Instrument Serif&quot;, serif;
@@ -1230,18 +1216,15 @@
                 style="
                   border-top: 1px dashed rgba(28, 27, 26, 0.2);
                   padding-top: 18px;
-                  display: flex;
-                  justify-content: space-between;
-                  align-items: center;
-                  gap: 12px;
-                  flex-wrap: wrap;
+                  display: grid;
+                  gap: 14px;
                 "
               >
                 <div>
                   <div
                     style="font-size: 12px; color: #4a4845; font-weight: 500"
                   >
-                    {{ summary }}
+                    {{ summaryItem }}<br />{{ summaryMarket }}
                   </div>
                   <div
                     style="
@@ -1257,6 +1240,7 @@
                 <button
                   onClick="{{ reserve }}"
                   style="
+                    width: 100%;
                     background: #8c1d2f;
                     color: #f7f4ec;
                     border: 0;
@@ -1293,7 +1277,7 @@
                 margin-bottom: 12px;
               "
             >
-              The Weekend Circuit
+              The Weekly Drop
             </div>
             <h2
               style="
@@ -1305,59 +1289,62 @@
                 margin: 0 0 16px;
               "
             >
-              Two markets.
-              <em
-                style="
-                  font-family: &quot;Instrument Serif&quot;, serif;
-                  font-style: italic;
-                  font-weight: 400;
-                "
-                >Every</em
-              >
-              weekend.
+              One day. One batch. Every weekend.
             </h2>
 
             <!-- Morning Timeline Strip -->
             <div
               style="
-                display: inline-flex;
-                gap: 14px;
-                flex-wrap: wrap;
+                display: inline-grid;
+                gap: 8px;
                 background: #fbf9f5;
                 border: 1px solid rgba(28, 27, 26, 0.1);
                 border-radius: 16px;
                 padding: 12px 18px;
                 font-size: 13.5px;
                 color: #4a4845;
-                align-items: center;
               "
             >
-              <div style="display: flex; align-items: center; gap: 8px">
+              <div style="display: flex; align-items: flex-start; gap: 8px">
                 <span
                   style="
+                    flex: none;
                     width: 8px;
                     height: 8px;
+                    margin-top: 6px;
                     border-radius: 50%;
                     background: #d49a3d;
                   "
                 ></span
-                ><strong>9:00 AM Open:</strong> Warm Butter Toast, Batons &amp;
-                Cherry Lemonade
+                ><strong style="flex: none">{{ openLabel }}:</strong> Warm Buttered Toast,
+                Twice-Baked Sourdough Batons &amp; Craft Tart Cherry Lemonade
               </div>
-              <span style="color: rgba(28, 27, 26, 0.2)">|</span>
-              <div style="display: flex; align-items: center; gap: 8px">
+              <div style="display: flex; align-items: flex-start; gap: 8px">
                 <span
                   style="
+                    flex: none;
                     width: 8px;
                     height: 8px;
+                    margin-top: 6px;
                     border-radius: 50%;
                     background: #8c1d2f;
                   "
                 ></span
-                ><strong>9:30 AM Drop:</strong> Full Chicken Salad Tartines
-                &amp; Pre-Order Tubs
+                ><strong style="flex: none">{{ dropLabel }}:</strong> Full Chicken Salad Tartines
+                &amp; Reserved Retail Tubs
               </div>
             </div>
+            <p
+              style="
+                margin: 12px 0 0;
+                font-size: 13px;
+                line-height: 1.5;
+                color: #4a4845;
+              "
+            >
+              (Scratch-batched fresh weekly. When the vault is empty, service
+              concludes until next weekend.)
+            </p>
           </div>
           <div
             style="
@@ -1370,7 +1357,7 @@
               margin-bottom: 28px;
             "
           >
-            <sc-for list="{{ venues }}" as="v" hint-placeholder-count="2">
+            <sc-for list="{{ venues }}" as="v" hint-placeholder-count="1">
               <article
                 style="
                   background: #fbf9f5;
@@ -1415,9 +1402,10 @@
                     {{ v.place }}
                   </div>
                 </div>
-                <button
-                  onClick="{{ v.toggle }}"
-                  aria-expanded="{{ v.open }}"
+                <a
+                  href="{{ v.mapUrl }}"
+                  target="_blank"
+                  rel="noopener"
                   style="
                     align-self: flex-start;
                     border: 1.5px solid #1c1b1a;
@@ -1432,84 +1420,8 @@
                       color 0.2s;
                   "
                   style-hover="background:#1C1B1A;color:#F7F4EC"
+                  >See Directions &amp; Parking</a
                 >
-                  {{ v.toggleLabel }}
-                </button>
-                <sc-if value="{{ v.open }}" hint-placeholder-val="{{ false }}">
-                  <div
-                    style="
-                      display: grid;
-                      gap: 14px;
-                      animation: thRise 0.35s ease both;
-                    "
-                  >
-                    <div
-                      style="
-                        display: flex;
-                        gap: 16px;
-                        align-items: center;
-                        flex-wrap: wrap;
-                      "
-                    >
-                      <a
-                        href="{{ v.mapUrl }}"
-                        target="_blank"
-                        rel="noopener"
-                        style="
-                          font-size: 14px;
-                          font-weight: 600;
-                          color: #8c1d2f;
-                        "
-                        >Open in Google Maps →</a
-                      >
-                      <a
-                        href="{{ v.calUrl }}"
-                        download="toasting-hen-market.ics"
-                        style="
-                          font-size: 13.5px;
-                          font-weight: 600;
-                          color: #5f6f52;
-                        "
-                        >Add to Calendar (.ics)</a
-                      >
-                    </div>
-                    <div
-                      style="
-                        display: grid;
-                        grid-template-columns: 1fr 1fr;
-                        gap: 12px;
-                        font-size: 13.5px;
-                        line-height: 1.5;
-                        color: #4a4845;
-                      "
-                    >
-                      <div>
-                        <div
-                          style="
-                            font-weight: 600;
-                            color: #1c1b1a;
-                            margin-bottom: 2px;
-                          "
-                        >
-                          Parking
-                        </div>
-                        {{ v.parking }}
-                      </div>
-                      <div>
-                        <div
-                          style="
-                            font-weight: 600;
-                            color: #1c1b1a;
-                            margin-bottom: 2px;
-                          "
-                        >
-                          Find the canopy
-                        </div>
-                        {{ v.booth }}
-                      </div>
-                    </div>
-                  </div>
-                </sc-if>
               </article>
             </sc-for>
           </div>
@@ -1555,9 +1467,10 @@
                 On-Site "Order &amp; Roam" · Skip the Stand
               </div>
               <div style="font-size: 13.5px; line-height: 1.5; color: #4a4845">
-                Canopy busy? Scan the QR code at our booth to order from your
-                phone and explore the market. We'll text your estimated
-                wait time and ping you the moment your food is ready.
+                Canopy busy? Scan the QR code at our booth to order directly
+                from your phone while exploring the market grounds. We'll text
+                your estimated wait time and ping you the moment your food is
+                ready at the pass-through.
               </div>
             </div>
           </div>
@@ -1788,6 +1701,7 @@
 
         <!-- VIP SMS / HEN HOUSE LIST CAPTURE -->
         <section
+          id="reservation"
           style="max-width: 1200px; margin: 0 auto; padding: 0 24px 88px"
         >
           <div
@@ -1816,7 +1730,7 @@
                   margin-bottom: 8px;
                 "
               >
-                The Hen House VIP Club
+                The Hen Reservation
               </div>
               <h3
                 style="
@@ -1828,7 +1742,7 @@
                   line-height: 1.15;
                 "
               >
-                Get weekend drop alerts &amp; secret menu tartines.
+                Be the first to know.
               </h3>
               <p
                 style="
@@ -1839,8 +1753,8 @@
                   max-width: 440px;
                 "
               >
-                Join our VIP list. We send one quick text on Friday mornings
-                with weekly specials, pre-order cutoffs, and pop-up locations.
+                Join "The Hen Reservation" to get opening market dates,
+                locations, and weekly pre-order drops.
               </p>
             </div>
             <div style="display: flex; gap: 10px; flex-wrap: wrap">
@@ -1944,8 +1858,7 @@
               >
                 Hours
               </div>
-              Sat · Oak Creek · 9 AM – 1 PM<br />Sun · Greenfield · 10 AM – 2
-              PM<br />Pre-orders close Wed 11:59 PM
+              {{ footerHours }}<br />Pre-orders close Wed 11:59 PM
             </div>
             <div style="font-size: 14px; line-height: 1.8; color: #4a4845">
               <div
@@ -1960,10 +1873,8 @@
               >
                 Contact
               </div>
-              <a href="mailto:hello@thetoastinghen.com"
-                >hello@thetoastinghen.com</a
-              ><br />@thetoastinghen on Instagram<br />Oak Creek &amp;
-              Greenfield, WI
+              @thetoastinghen on Instagram<br />Southeastern Milwaukee
+              County
             </div>
             <div
               style="
@@ -2044,9 +1955,6 @@
           tab: 'tartines',
           qty: 2,
           flavor: 'The Hen House',
-          market: 'oak',
-          open: { oak: false, gf: false },
-          reserved: false,
           phone: '',
           phoneSubmitted: false,
           now: new Date()
@@ -2112,7 +2020,7 @@
             ? "display:inline-flex;padding:5px 12px;border-radius:999px;background:rgba(95,111,82,.3);color:#A3B899;font-size:11.5px;font-weight:700;letter-spacing:.05em"
             : "display:inline-flex;padding:5px 12px;border-radius:999px;background:rgba(212,154,61,.25);color:#D49A3D;font-size:11.5px;font-weight:700;letter-spacing:.05em";
           const cutoffExplainer = isOrderingWindowOpen
-            ? "Orders close Wednesday at 11:59 PM. We prep Friday at Common Cookhouse and hold at ≤ 38°F. Pick up chilled and labeled at the market booth—skip the line."
+            ? "Skip the risk of an early sell-out. Reserve your tamper-evident 8 oz deli tubs online before Wednesday at 11:59 PM for guaranteed cooler pick-up at the canopy."
             : "Our kitchen is prepping Friday batches. Pre-orders for next weekend re-open Monday morning.";
 
           const all = [
@@ -2137,73 +2045,53 @@
           const fl = [['The Hen House', 'Classic', '#D49A3D'], ['The Rooster Booster', 'Savory', '#5F6F52'], ['The Chick Magnet', 'Specialty', '#8C1D2F']];
           const flavors = fl.map(([name, sub, c]) => {
             const on = s.flavor === name;
-            return { name, sub, pressed: on, onClick: () => this.setState({ flavor: name, reserved: false }),
+            return { name, sub, pressed: on, onClick: () => this.setState({ flavor: name }),
               style: `display:flex;justify-content:space-between;align-items:center;gap:12px;width:100%;text-align:left;padding:13px 16px;border-radius:14px;font-size:14.5px;font-weight:600;color:#1C1B1A;transition:border-color .2s,background .2s;border:1.5px solid ${on ? '#1C1B1A' : 'rgba(28,27,26,.14)'};background:${on ? '#FFFFFF' : 'transparent'}`,
               dotStyle: `width:10px;height:10px;border-radius:50%;background:${c};display:inline-block` };
           });
 
-          const mkList = [['oak', 'Sat · Oak Creek'], ['gf', 'Sun · Greenfield']];
-          const markets = mkList.map(([k, label]) => ({ label, pressed: s.market === k, onClick: () => this.setState({ market: k, reserved: false }),
-            style: `border:1.5px solid ${s.market === k ? '#1C1B1A' : 'rgba(28,27,26,.14)'};background:${s.market === k ? '#1C1B1A' : 'transparent'};color:${s.market === k ? '#F7F4EC' : '#1C1B1A'};padding:11px 12px;border-radius:12px;font-size:13px;font-weight:600;text-align:left;transition:all .2s` }));
+          // Weekly market residency. Set ACTIVE_MARKET to 'gf' (Greenfield, Sunday) or
+          // 'oak' (Oak Creek, Saturday) once vendor contracts are finalized.
+          const ACTIVE_MARKET = 'gf';
+          const MARKETS = {
+            gf: {
+              k: 'gf', day: 'Sunday', hours: '10:00 AM – 2:00 PM (or until sold out)', name: 'Greenfield Farmers Market', place: 'Konkel Park · Greenfield, WI', color: '#8C1D2F', fg: '#F7F4EC',
+              pickup: 'Sun · Greenfield', footerHours: 'Sun · Greenfield · 10 AM – 2 PM', openLabel: '10:00 AM Open', dropLabel: '10:30 AM Drop',
+            },
+            oak: {
+              k: 'oak', day: 'Saturday', hours: '9:00 AM – 1:00 PM (or until sold out)', name: 'Oak Creek Farmers Market', place: 'Drexel Town Square · Oak Creek, WI', color: '#D49A3D', fg: '#1C1B1A',
+              pickup: 'Sat · Oak Creek', footerHours: 'Sat · Oak Creek · 9 AM – 1 PM', openLabel: '9:00 AM Open', dropLabel: '9:30 AM Drop',
+            },
+          };
+          const active = MARKETS[ACTIVE_MARKET];
+          const mkList = [[active.k, active.pickup]];
+          const markets = mkList.map(([k, label]) => ({ label, pressed: true, onClick: () => {},
+            style: `border:1.5px solid ${active.k === k ? '#1C1B1A' : 'rgba(28,27,26,.14)'};background:${active.k === k ? '#1C1B1A' : 'transparent'};color:${active.k === k ? '#F7F4EC' : '#1C1B1A'};padding:11px 12px;border-radius:12px;font-size:13px;font-weight:600;text-align:left;transition:all .2s` }));
 
           const dayStyle = (c, fg) => `font-size:11.5px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;padding:7px 12px;border-radius:999px;background:${c};color:${fg}`;
 
-          // Quick Calendar .ics Data Link Maker
-          const nextMarket = (weekday, endHour) => {
-            const d = new Date(current);
-            d.setDate(d.getDate() + ((weekday - d.getDay() + 7) % 7));
-            d.setHours(endHour, 0, 0, 0);
-            if (d <= current) d.setDate(d.getDate() + 7);
-            return d;
-          };
-          const icsDate = (d, hour) => `${d.getFullYear()}${String(d.getMonth() + 1).padStart(2,'0')}${String(d.getDate()).padStart(2,'0')}T${String(hour).padStart(2,'0')}0000`;
-          const makeIcs = (title, desc, loc, weekday, startHour, endHour) => {
-            const d = nextMarket(weekday, endHour);
-            const esc = t => t.replace(/,/g, '\\,');
-            const lines = [
-              'BEGIN:VCALENDAR', 'VERSION:2.0', 'PRODID:-//The Toasting Hen//Market Calendar//EN', 'BEGIN:VEVENT',
-              `UID:${weekday}-${icsDate(d, startHour)}@thetoastinghen.com`,
-              `DTSTAMP:${current.toISOString().replace(/[-:]|\.\d{3}/g, '')}`,
-              `DTSTART;TZID=America/Chicago:${icsDate(d, startHour)}`,
-              `DTEND;TZID=America/Chicago:${icsDate(d, endHour)}`,
-              `SUMMARY:${esc(title)}`, `DESCRIPTION:${esc(desc)}`, `LOCATION:${esc(loc)}`,
-              'END:VEVENT', 'END:VCALENDAR',
-            ];
-            return 'data:text/calendar;charset=utf-8,' + encodeURIComponent(lines.join('\r\n') + '\r\n');
-          };
 
-          const venues = [
-            {
-              k: 'oak', day: 'Saturday', hours: '9:00 AM – 1:00 PM', name: 'Oak Creek Farmers Market', place: 'Drexel Town Square · Oak Creek, WI', color: '#D49A3D', fg: '#1C1B1A',
-              parking: 'Free lot off Drexel Ave; overflow along Main St.', booth: 'Black canopy with the white hen, near the fountain.',
-              calUrl: makeIcs("The Toasting Hen @ Oak Creek", "Scratch toast, tartines, and tart cherry lemonade.", "Drexel Town Square, Oak Creek, WI", 6, 9, 13)
-            },
-            {
-              k: 'gf', day: 'Sunday', hours: '10:00 AM – 2:00 PM', name: 'Greenfield Farmers Market', place: 'Konkel Park · Greenfield, WI', color: '#8C1D2F', fg: '#F7F4EC',
-              parking: 'Konkel Park lot via S 51st St; street parking on Layton.', booth: 'East row by the pavilion — follow the toast.',
-              calUrl: makeIcs("The Toasting Hen @ Greenfield", "Scratch toast, tartines, and tart cherry lemonade.", "Konkel Park, Greenfield, WI", 0, 10, 14)
-            },
-          ].map(v => ({ ...v, dayStyle: dayStyle(v.color, v.fg), open: s.open[v.k], toggleLabel: s.open[v.k] ? 'Hide Directions & Parking' : 'See Directions & Parking',
-            mapUrl: `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(v.place.replace(' · ', ', '))}`, toggle: () => this.setState(st => ({ open: { ...st.open, [v.k]: !st.open[v.k] } })) }));
+          const venues = [active].map(v => ({
+            ...v, dayStyle: dayStyle(v.color, v.fg),
+            mapUrl: `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(v.place.replace(' · ', ', '))}`,
+          }));
 
-          const summary = `${s.qty} × ${s.flavor} · ${mkList.find(m => m[0] === s.market)[1]}`;
+          const summaryItem = `${s.qty} × ${s.flavor}`;
+          const summaryMarket = active.pickup;
           const total = `$${s.qty * 9}`;
 
-          const reserve = () => {
-            const body = `Hi! I'd like to reserve:\n\n${summary}\nTotal: ${total}\n\nName for the label: `;
-            window.location.href = `mailto:hello@thetoastinghen.com?subject=${encodeURIComponent('Tub pre-order')}&body=${encodeURIComponent(body)}`;
-            this.setState({ reserved: true });
-          };
+          const reserve = () => { window.location.hash = 'reservation'; };
 
           return {
             isTabs, tabs, menuItems, showSteps: p.showPreorderSteps !== false,
             cutoffBadgeText, cutoffBadgeStyle, cutoffExplainer,
             countdownString, countdownLabel, timerSubtext,
             flavors, markets, qty: s.qty,
-            inc: () => this.setState(st => ({ qty: Math.min(12, st.qty + 1), reserved: false })),
-            dec: () => this.setState(st => ({ qty: Math.max(1, st.qty - 1), reserved: false })),
-            total, summary,
-            reserve, reserveLabel: s.reserved ? 'Email opened — press send to confirm' : 'Reserve by email',
+            inc: () => this.setState(st => ({ qty: Math.min(12, st.qty + 1) })),
+            dec: () => this.setState(st => ({ qty: Math.max(1, st.qty - 1) })),
+            total, summaryItem, summaryMarket,
+            openLabel: active.openLabel, dropLabel: active.dropLabel, footerHours: active.footerHours,
+            reserve, reserveLabel: 'Reserve Your Tubs for This Weekend',
             venues,
             phoneVal: s.phone,
             onPhoneInput: (e) => this.setState({ phone: e.target.value }),
