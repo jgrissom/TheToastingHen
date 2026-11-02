@@ -1,24 +1,34 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<title>The Toasting Hen | Scratch Toast &amp; Chicken Salad Tartines</title>
+<meta name="description" content="Scratch toast, chicken salad tartines, and tart cherry lemonade at the Oak Creek and Greenfield, Wisconsin farmers markets. 100% peanut- and tree nut-free.">
+<meta property="og:type" content="website">
+<meta property="og:title" content="The Toasting Hen">
+<meta property="og:description" content="Scratch toast, chicken salad tartines, and tart cherry lemonade at Wisconsin farmers markets.">
+<meta property="og:url" content="https://jgrissom.github.io/TheToastingHen/">
+<meta property="og:image" content="https://jgrissom.github.io/TheToastingHen/assets/hero.jpeg">
+<link rel="icon" type="image/svg+xml" href="assets/logo-black.svg">
 <script src="./support.js"></script>
 </head>
 <body>
 <x-dc>
 <helmet>
-<meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700&family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,600;1,400&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
-<script src="./image-slot.js"></script>
 <style>
 html,body{margin:0;padding:0;background:#F7F4EC;color:#1C1B1A;font-family:'Plus Jakarta Sans',sans-serif;-webkit-font-smoothing:antialiased;scroll-behavior:smooth}
 *{box-sizing:border-box}
 a{color:#1C1B1A;text-decoration:none}a:hover{color:#8C1D2F}
 button{font-family:inherit;cursor:pointer}
-@keyframes thPulse{0%{transform:scale(1);opacity:.9}70%{transform:scale(2.4);opacity:0}100%{transform:scale(2.4);opacity:0}}
 @keyframes thRise{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:none}}
+html{scroll-padding-top:88px}
+:focus-visible{outline:2px solid #8C1D2F;outline-offset:2px}
+@media (max-width:720px){.th-nav-link{display:none}}
+@media (prefers-reduced-motion:reduce){html,body{scroll-behavior:auto}*,*::before,*::after{animation:none!important;transition:none!important}}
 </style>
 </helmet>
 
@@ -28,21 +38,21 @@ button{font-family:inherit;cursor:pointer}
 <header style="position:sticky;top:0;z-index:50;background:rgba(247,244,236,.86);backdrop-filter:blur(14px);border-bottom:1px solid rgba(28,27,26,.08)">
   <nav style="max-width:1200px;margin:0 auto;padding:14px 24px;display:flex;align-items:center;justify-content:space-between;gap:16px">
     <a href="#top" style="display:flex;align-items:center;gap:12px">
-      <img src="assets/logo-black.svg" alt="The Toasting Hen" style="width:44px;height:44px;display:block">
+      <img src="assets/logo-black.svg" alt="" style="width:44px;height:44px;display:block">
       <span style="font-family:'Outfit',sans-serif;font-weight:600;font-size:17px;letter-spacing:.01em;line-height:1.1">The Toasting Hen<span style="display:block;font-family:'Plus Jakarta Sans',sans-serif;font-weight:500;font-size:10.5px;letter-spacing:.14em;text-transform:uppercase;color:#5F6F52">Market Pop-Up · Wisconsin</span></span>
     </a>
     <div style="display:flex;align-items:center;gap:28px;font-size:14px;font-weight:500;flex-wrap:wrap;justify-content:flex-end">
-      <a href="#menu" style="color:#1C1B1A">Menu</a>
-      <a href="#tubs" style="color:#1C1B1A">Pre-Order Tubs</a>
-      <a href="#circuit" style="color:#1C1B1A">Market Circuit</a>
-      <a href="#pledge" style="color:#1C1B1A">Allergen Pledge</a>
+      <a class="th-nav-link" href="#menu">Menu</a>
+      <a class="th-nav-link" href="#tubs">Pre-Order Tubs</a>
+      <a class="th-nav-link" href="#circuit">Market Circuit</a>
+      <a class="th-nav-link" href="#pledge">Allergen Pledge</a>
       <a href="#tubs" style="background:#1C1B1A;color:#F7F4EC;padding:11px 20px;border-radius:999px;font-weight:600;transition:background .2s,transform .2s" style-hover="background:#8C1D2F;transform:translateY(-1px)">Order Ahead</a>
     </div>
   </nav>
 </header>
 
 <!-- HERO -->
-<section id="top" style="max-width:1200px;margin:0 auto;padding:72px 24px 56px;display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:48px;align-items:center">
+<section id="top" style="max-width:1200px;margin:0 auto;padding:72px 24px 56px;display:grid;grid-template-columns:repeat(auto-fit,minmax(min(320px,100%),1fr));gap:48px;align-items:center">
   <div style="animation:thRise .7s ease both">
     <div style="display:flex;gap:10px;flex-wrap:wrap;margin-bottom:28px">
       <span style="display:inline-flex;align-items:center;gap:8px;padding:8px 14px;border-radius:999px;border:1px solid rgba(95,111,82,.35);background:rgba(95,111,82,.08);color:#4A5D4E;font-size:12.5px;font-weight:600;letter-spacing:.02em"><span style="width:7px;height:7px;border-radius:50%;background:#5F6F52;display:inline-block"></span>100% Peanut &amp; Tree Nut-Free Facility</span>
@@ -58,7 +68,7 @@ button{font-family:inherit;cursor:pointer}
   <div style="position:relative;animation:thRise .9s .1s ease both">
     <div style="position:absolute;inset:auto -12px -12px auto;width:56%;height:56%;border-radius:32px;background:#D49A3D;opacity:.9;z-index:0"></div>
     <div style="position:relative;z-index:1;aspect-ratio:4/5;max-height:620px;border-radius:28px;overflow:hidden;border:1px solid rgba(28,27,26,.12);background:repeating-linear-gradient(135deg,#ECE7DB 0 12px,#E4DED0 12px 24px)">
-      <img src="assets/hero.jpeg" alt="Three chicken salad tartines on toasted sourdough" style="width:100%;height:100%;object-fit:cover;display:block">
+      <img src="assets/hero.jpeg" width="999" height="1241" fetchpriority="high" alt="Three chicken salad tartines on toasted sourdough" style="width:100%;height:100%;object-fit:cover;display:block">
     </div>
     <div style="position:absolute;left:-12px;bottom:36px;z-index:2;background:#F7F4EC;border:1px solid rgba(28,27,26,.1);border-radius:18px;padding:14px 18px;box-shadow:0 20px 40px -24px rgba(28,27,26,.4);display:flex;gap:14px;align-items:center">
       <img src="assets/logo-black.svg" alt="" style="width:38px;height:38px">
@@ -82,12 +92,12 @@ button{font-family:inherit;cursor:pointer}
     <sc-if value="{{ isTabs }}" hint-placeholder-val="{{ true }}">
     <div style="display:inline-flex;gap:4px;padding:4px;border-radius:999px;background:rgba(28,27,26,.06)">
       <sc-for list="{{ tabs }}" as="t" hint-placeholder-count="3">
-        <button onClick="{{ t.onClick }}" style="{{ t.style }}">{{ t.label }}</button>
+        <button onClick="{{ t.onClick }}" aria-pressed="{{ t.pressed }}" style="{{ t.style }}">{{ t.label }}</button>
       </sc-for>
     </div>
     </sc-if>
   </div>
-  <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:18px">
+  <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(min(280px,100%),1fr));gap:18px">
     <sc-for list="{{ menuItems }}" as="m" hint-placeholder-count="5">
       <article style="background:#FBF9F5;border:1px solid rgba(28,27,26,.09);border-radius:22px;padding:24px;display:flex;flex-direction:column;gap:14px;transition:transform .25s,box-shadow .25s,border-color .25s" style-hover="transform:translateY(-4px);box-shadow:0 24px 40px -28px rgba(28,27,26,.45);border-color:rgba(212,154,61,.6)">
         <div style="display:flex;justify-content:space-between;align-items:center;gap:12px">
@@ -104,12 +114,12 @@ button{font-family:inherit;cursor:pointer}
 
 <!-- PRE-ORDER TUBS -->
 <section id="tubs" style="max-width:1200px;margin:0 auto;padding:32px 24px 88px">
-  <div style="background:#1C1B1A;color:#F7F4EC;border-radius:32px;padding:clamp(28px,5vw,64px);display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:48px;align-items:center;position:relative;overflow:hidden">
+  <div style="background:#1C1B1A;color:#F7F4EC;border-radius:32px;padding:clamp(28px,5vw,64px);display:grid;grid-template-columns:repeat(auto-fit,minmax(min(300px,100%),1fr));gap:48px;align-items:center;position:relative;overflow:hidden">
     <img src="assets/logo-white.svg" alt="" style="position:absolute;right:-60px;bottom:-80px;width:420px;opacity:.06;pointer-events:none">
     <div style="position:relative">
       <div style="font-size:12px;font-weight:600;letter-spacing:.16em;text-transform:uppercase;color:#D49A3D;margin-bottom:14px">Weekday Pre-Orders</div>
       <h2 style="font-family:'Outfit',sans-serif;font-weight:600;font-size:clamp(32px,4vw,52px);letter-spacing:-.02em;line-height:1.02;margin:0 0 18px">Grab &amp; Go <span style="white-space:nowrap">8 oz Tubs</span> <span style="font-family:'Instrument Serif',serif;font-style:italic;font-weight:400;color:#D49A3D">$9</span></h2>
-      <p style="font-size:16px;line-height:1.6;color:rgba(247,244,236,.78);margin:0 0 28px;max-width:460px;text-wrap:pretty">Order online by Wednesday midnight — pick up fresh at your weekend market booth. Chilled, sealed, and labeled with your name.</p>
+      <p style="font-size:16px;line-height:1.6;color:rgba(247,244,236,.78);margin:0 0 28px;max-width:460px;text-wrap:pretty">Email your order by Wednesday 11:59 PM — pick up fresh at your weekend market booth. Chilled, sealed, and labeled with your name.</p>
       <sc-if value="{{ showSteps }}" hint-placeholder-val="{{ true }}">
       <ol style="list-style:none;margin:0;padding:0;display:grid;gap:12px">
         <li style="display:flex;gap:14px;align-items:flex-start"><span style="flex:none;width:28px;height:28px;border-radius:50%;border:1.5px solid #D49A3D;color:#D49A3D;display:grid;place-items:center;font-size:12px;font-weight:600">1</span><span style="font-size:14.5px;line-height:1.5;color:rgba(247,244,236,.85)"><strong style="color:#F7F4EC">Reserve</strong> flavors &amp; quantity by Wednesday 11:59 PM.</span></li>
@@ -123,7 +133,7 @@ button{font-family:inherit;cursor:pointer}
         <div style="font-size:12px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:#4a4845;margin-bottom:10px">Flavor</div>
         <div style="display:grid;gap:8px">
           <sc-for list="{{ flavors }}" as="f" hint-placeholder-count="3">
-            <button onClick="{{ f.onClick }}" style="{{ f.style }}"><span style="display:flex;align-items:center;gap:10px"><span style="{{ f.dotStyle }}"></span>{{ f.name }}</span><span style="font-size:12.5px;color:#4a4845;font-weight:500">{{ f.sub }}</span></button>
+            <button onClick="{{ f.onClick }}" aria-pressed="{{ f.pressed }}" style="{{ f.style }}"><span style="display:flex;align-items:center;gap:10px"><span style="{{ f.dotStyle }}"></span>{{ f.name }}</span><span style="font-size:12.5px;color:#4a4845;font-weight:500">{{ f.sub }}</span></button>
           </sc-for>
         </div>
       </div>
@@ -131,16 +141,16 @@ button{font-family:inherit;cursor:pointer}
         <div>
           <div style="font-size:12px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:#4a4845;margin-bottom:10px">Quantity</div>
           <div style="display:inline-flex;align-items:center;border:1.5px solid #1C1B1A;border-radius:999px;overflow:hidden">
-            <button onClick="{{ dec }}" style="width:44px;height:44px;border:0;background:transparent;font-size:20px;color:#1C1B1A" style-hover="background:rgba(28,27,26,.06)">−</button>
+            <button onClick="{{ dec }}" aria-label="Decrease quantity" style="width:44px;height:44px;border:0;background:transparent;font-size:20px;color:#1C1B1A" style-hover="background:rgba(28,27,26,.06)">−</button>
             <span style="min-width:36px;text-align:center;font-family:'Outfit',sans-serif;font-weight:600;font-size:18px">{{ qty }}</span>
-            <button onClick="{{ inc }}" style="width:44px;height:44px;border:0;background:transparent;font-size:20px;color:#1C1B1A" style-hover="background:rgba(28,27,26,.06)">+</button>
+            <button onClick="{{ inc }}" aria-label="Increase quantity" style="width:44px;height:44px;border:0;background:transparent;font-size:20px;color:#1C1B1A" style-hover="background:rgba(28,27,26,.06)">+</button>
           </div>
         </div>
         <div>
           <div style="font-size:12px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:#4a4845;margin-bottom:10px">Pickup</div>
           <div style="display:grid;gap:6px">
             <sc-for list="{{ markets }}" as="mk" hint-placeholder-count="2">
-              <button onClick="{{ mk.onClick }}" style="{{ mk.style }}">{{ mk.label }}</button>
+              <button onClick="{{ mk.onClick }}" aria-pressed="{{ mk.pressed }}" style="{{ mk.style }}">{{ mk.label }}</button>
             </sc-for>
           </div>
         </div>
@@ -159,7 +169,7 @@ button{font-family:inherit;cursor:pointer}
     <div style="font-size:12px;font-weight:600;letter-spacing:.16em;text-transform:uppercase;color:#5F6F52;margin-bottom:12px">The Weekend Circuit</div>
     <h2 style="font-family:'Outfit',sans-serif;font-weight:600;font-size:clamp(32px,4vw,48px);letter-spacing:-.02em;line-height:1.05;margin:0">Two markets. <em style="font-family:'Instrument Serif',serif;font-style:italic;font-weight:400">Every</em> weekend.</h2>
   </div>
-  <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:20px">
+  <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(300px,100%),1fr));gap:20px">
     <sc-for list="{{ venues }}" as="v" hint-placeholder-count="2">
       <article style="background:#FBF9F5;border:1px solid rgba(28,27,26,.09);border-radius:26px;padding:28px;display:flex;flex-direction:column;gap:18px;transition:box-shadow .25s" style-hover="box-shadow:0 24px 44px -30px rgba(28,27,26,.45)">
         <div style="display:flex;justify-content:space-between;align-items:center;gap:12px">
@@ -170,10 +180,10 @@ button{font-family:inherit;cursor:pointer}
           <h3 style="font-family:'Outfit',sans-serif;font-weight:600;font-size:26px;letter-spacing:-.02em;margin:0 0 6px;line-height:1.1">{{ v.name }}</h3>
           <div style="font-size:15px;color:#4a4845">{{ v.place }}</div>
         </div>
-        <button onClick="{{ v.toggle }}" style="align-self:flex-start;border:1.5px solid #1C1B1A;background:transparent;color:#1C1B1A;padding:11px 18px;border-radius:999px;font-weight:600;font-size:14px;transition:background .2s,color .2s" style-hover="background:#1C1B1A;color:#F7F4EC">{{ v.toggleLabel }}</button>
+        <button onClick="{{ v.toggle }}" aria-expanded="{{ v.open }}" style="align-self:flex-start;border:1.5px solid #1C1B1A;background:transparent;color:#1C1B1A;padding:11px 18px;border-radius:999px;font-weight:600;font-size:14px;transition:background .2s,color .2s" style-hover="background:#1C1B1A;color:#F7F4EC">{{ v.toggleLabel }}</button>
         <sc-if value="{{ v.open }}" hint-placeholder-val="{{ false }}">
           <div style="display:grid;gap:14px;animation:thRise .35s ease both">
-            <div style="height:170px;border-radius:16px;background:repeating-linear-gradient(135deg,#ECE7DB 0 12px,#E4DED0 12px 24px);display:grid;place-items:center;font-family:ui-monospace,monospace;font-size:12px;color:#4a4845;letter-spacing:.04em">{{ v.mapLabel }}</div>
+            <a href="{{ v.mapUrl }}" target="_blank" rel="noopener" style="font-size:14px;font-weight:600;color:#8C1D2F">Open in Google Maps →</a>
             <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;font-size:13.5px;line-height:1.5;color:#4a4845">
               <div><div style="font-weight:600;color:#1C1B1A;margin-bottom:2px">Parking</div>{{ v.parking }}</div>
               <div><div style="font-weight:600;color:#1C1B1A;margin-bottom:2px">Find the canopy</div>{{ v.booth }}</div>
@@ -186,23 +196,21 @@ button{font-family:inherit;cursor:pointer}
 </section>
 
 <!-- TELEMETRY + PLEDGE -->
-<section id="pledge" style="max-width:1200px;margin:0 auto;padding:0 24px 88px;display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:20px">
+<section id="pledge" style="max-width:1200px;margin:0 auto;padding:0 24px 88px;display:grid;grid-template-columns:repeat(auto-fit,minmax(min(300px,100%),1fr));gap:20px">
   <div style="background:#0f0f0e;color:#F7F4EC;border-radius:26px;padding:30px;display:flex;flex-direction:column;gap:22px;border:1px solid rgba(247,244,236,.08)">
     <div style="display:flex;justify-content:space-between;align-items:center;gap:12px">
-      <div style="font-size:11.5px;font-weight:600;letter-spacing:.16em;text-transform:uppercase;color:rgba(247,244,236,.6)">Proof of Cold · Telemetry</div>
-      <div style="display:flex;align-items:center;gap:8px;font-family:ui-monospace,monospace;font-size:11.5px;color:#9ad0a0">{{ pulseDot }}{{ liveLabel }}</div>
+      <div style="font-size:11.5px;font-weight:600;letter-spacing:.16em;text-transform:uppercase;color:rgba(247,244,236,.6)">Proof of Cold</div>
     </div>
     <div style="display:flex;align-items:flex-end;gap:16px;flex-wrap:wrap">
-      <div style="font-family:'Outfit',sans-serif;font-weight:600;font-size:72px;line-height:.9;letter-spacing:-.04em">{{ tempStr }}<span style="font-size:28px;letter-spacing:0;color:#D49A3D">°F</span></div>
-      <div style="font-family:ui-monospace,monospace;font-size:12px;line-height:1.6;color:rgba(247,244,236,.7);padding-bottom:4px">COLD VAULT · ESP32 BLE<br>threshold ≤ 38.0°F · {{ status }}</div>
+      <div style="font-family:'Outfit',sans-serif;font-weight:600;font-size:72px;line-height:.9;letter-spacing:-.04em">≤ 38<span style="font-size:28px;letter-spacing:0;color:#D49A3D">°F</span></div>
+      <div style="font-family:ui-monospace,monospace;font-size:12px;line-height:1.6;color:rgba(247,244,236,.7);padding-bottom:4px">COLD VAULT · ESP32 BLE<br>our holding standard</div>
     </div>
-    <div style="height:6px;border-radius:999px;background:rgba(247,244,236,.12);overflow:hidden"><div style="{{ gaugeStyle }}"></div></div>
     <p style="margin:0;font-size:14px;line-height:1.55;color:rgba(247,244,236,.72);text-wrap:pretty">Every tub and protein boat is held in a commercial cold vault monitored in real time at ≤ 38°F via ESP32 BLE telemetry. We take chilling to an engineering standard, not a guess.</p>
   </div>
   <div style="background:#5F6F52;color:#F7F4EC;border-radius:26px;padding:30px;display:flex;flex-direction:column;justify-content:space-between;gap:22px">
-    <div style="font-size:11.5px;font-weight:600;letter-spacing:.16em;text-transform:uppercase;color:rgba(247,244,236,.75)">Allergen Commitment</div>
+    <div style="font-size:11.5px;font-weight:600;letter-spacing:.16em;text-transform:uppercase;color:#F7F4EC">Allergen Commitment</div>
     <h2 style="font-family:'Outfit',sans-serif;font-weight:600;font-size:clamp(30px,3.4vw,42px);letter-spacing:-.02em;line-height:1.05;margin:0;text-wrap:pretty">Proudly 100% Peanut-Free and Tree Nut-Free.</h2>
-    <p style="margin:0;font-size:14.5px;line-height:1.55;color:rgba(247,244,236,.85);text-wrap:pretty">No peanuts or tree nuts enter our kitchen, our canopy, or our supply list. Ask us anything about the other eight — we read every label so you don't have to.</p>
+    <p style="margin:0;font-size:14.5px;line-height:1.55;color:#F7F4EC;text-wrap:pretty">No peanuts or tree nuts enter our kitchen, our canopy, or our supply list. Ask us anything about the other seven major allergens — we read every label so you don't have to.</p>
     <div style="display:flex;gap:8px;flex-wrap:wrap">
       <span style="padding:7px 12px;border-radius:999px;border:1px solid rgba(247,244,236,.4);font-size:12px;font-weight:600">Dairy-free batons</span>
       <span style="padding:7px 12px;border-radius:999px;border:1px solid rgba(247,244,236,.4);font-size:12px;font-weight:600">Bread-free Side Chick</span>
@@ -213,14 +221,14 @@ button{font-family:inherit;cursor:pointer}
 
 <!-- FOOTER -->
 <footer style="border-top:1px solid rgba(28,27,26,.1);background:#F2EEE4">
-  <div style="max-width:1200px;margin:0 auto;padding:56px 24px 32px;display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:36px">
+  <div style="max-width:1200px;margin:0 auto;padding:56px 24px 32px;display:grid;grid-template-columns:repeat(auto-fit,minmax(min(200px,100%),1fr));gap:36px">
     <div style="display:flex;flex-direction:column;gap:14px">
-      <img src="assets/logo-black.svg" alt="The Toasting Hen" style="width:56px;height:56px">
+      <img src="assets/logo-black.svg" alt="" style="width:56px;height:56px">
       <div style="font-family:'Outfit',sans-serif;font-weight:600;font-size:18px">The Toasting Hen LLC</div>
       <p style="margin:0;font-size:13.5px;line-height:1.55;color:#4a4845;max-width:280px">Artisan morning toast, craft chicken salad tartines, and scratch lemonade — under a canopy near you.</p>
     </div>
     <div style="font-size:14px;line-height:1.8;color:#4a4845"><div style="font-size:11.5px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:#1C1B1A;margin-bottom:8px">Hours</div>Sat · Oak Creek · 9 AM – 1 PM<br>Sun · Greenfield · 10 AM – 2 PM<br>Pre-orders close Wed 11:59 PM</div>
-    <div style="font-size:14px;line-height:1.8;color:#4a4845"><div style="font-size:11.5px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:#1C1B1A;margin-bottom:8px">Contact</div><a href="mailto:hello@thetoastinghen.com">hello@thetoastinghen.com</a><br><a href="#">@thetoastinghen</a> on Instagram<br>Oak Creek &amp; Greenfield, WI</div>
+    <div style="font-size:14px;line-height:1.8;color:#4a4845"><div style="font-size:11.5px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:#1C1B1A;margin-bottom:8px">Contact</div><a href="mailto:hello@thetoastinghen.com">hello@thetoastinghen.com</a><br>@thetoastinghen on Instagram<br>Oak Creek &amp; Greenfield, WI</div>
     <div style="display:flex;flex-direction:column;gap:12px;align-items:flex-start">
       <div style="font-size:11.5px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:#1C1B1A">Payments</div>
       <div style="display:inline-flex;align-items:center;gap:10px;padding:10px 14px;border-radius:12px;border:1px solid rgba(28,27,26,.15);background:#FBF9F5;font-size:13px;font-weight:600"><span style="width:16px;height:16px;border-radius:4px;background:#1C1B1A;display:inline-block"></span>Secured by Square</div>
@@ -234,16 +242,9 @@ button{font-family:inherit;cursor:pointer}
 </footer>
 </div>
 </x-dc>
-<script type="text/x-dc" data-dc-script data-props="{&quot;menuLayout&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;options&quot;:[&quot;tabs&quot;,&quot;grid&quot;],&quot;default&quot;:&quot;tabs&quot;,&quot;tsType&quot;:&quot;'tabs'|'grid'&quot;,&quot;section&quot;:&quot;Menu&quot;},&quot;liveTelemetry&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:true,&quot;tsType&quot;:&quot;boolean&quot;,&quot;section&quot;:&quot;Proof of Cold&quot;},&quot;showPreorderSteps&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:true,&quot;tsType&quot;:&quot;boolean&quot;,&quot;section&quot;:&quot;Pre-Order&quot;}}">
+<script type="text/x-dc" data-dc-script data-props="{&quot;menuLayout&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;options&quot;:[&quot;tabs&quot;,&quot;grid&quot;],&quot;default&quot;:&quot;tabs&quot;,&quot;tsType&quot;:&quot;'tabs'|'grid'&quot;,&quot;section&quot;:&quot;Menu&quot;},&quot;showPreorderSteps&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:true,&quot;tsType&quot;:&quot;boolean&quot;,&quot;section&quot;:&quot;Pre-Order&quot;}}">
 class Component extends DCLogic {
-  state = { tab: 'tartines', qty: 2, flavor: 'The Hen House', market: 'oak', open: { oak: false, gf: false }, temp: 36.4, tick: 0, reserved: false };
-  componentDidMount() {
-    this.timer = setInterval(() => {
-      if (this.props.liveTelemetry === false) return;
-      this.setState(s => ({ temp: +(35.6 + Math.random() * 1.9).toFixed(1), tick: s.tick + 1 }));
-    }, 2800);
-  }
-  componentWillUnmount() { clearInterval(this.timer); }
+  state = { tab: 'tartines', qty: 2, flavor: 'The Hen House', market: 'oak', open: { oak: false, gf: false }, reserved: false };
   renderVals() {
     const s = this.state, p = this.props;
     const isTabs = (p.menuLayout ?? 'tabs') === 'tabs';
@@ -262,41 +263,45 @@ class Component extends DCLogic {
     const menuItems = (isTabs ? all.filter(m => m.cat === s.tab) : all).map(m => ({ ...m, tagStyle: T[m.cat] }));
     const tabBase = 'border:0;padding:10px 18px;border-radius:999px;font-size:13.5px;font-weight:600;transition:background .2s,color .2s;';
     const tabs = [['tartines', 'The Tartines'], ['toast', 'Toast & Batons'], ['bev', 'Beverages']].map(([k, label]) => ({
-      label, onClick: () => this.setState({ tab: k }),
+      label, pressed: s.tab === k, onClick: () => this.setState({ tab: k }),
       style: tabBase + (s.tab === k ? 'background:#1C1B1A;color:#F7F4EC' : 'background:transparent;color:#1C1B1A'),
     }));
     const fl = [['The Hen House', 'Classic', '#D49A3D'], ['The Rooster Booster', 'Savory', '#5F6F52'], ['The Chick Magnet', 'Specialty', '#8C1D2F']];
     const flavors = fl.map(([name, sub, c]) => {
       const on = s.flavor === name;
-      return { name, sub, onClick: () => this.setState({ flavor: name, reserved: false }),
+      return { name, sub, pressed: on, onClick: () => this.setState({ flavor: name, reserved: false }),
         style: `display:flex;justify-content:space-between;align-items:center;gap:12px;width:100%;text-align:left;padding:13px 16px;border-radius:14px;font-size:14.5px;font-weight:600;color:#1C1B1A;transition:border-color .2s,background .2s;border:1.5px solid ${on ? '#1C1B1A' : 'rgba(28,27,26,.14)'};background:${on ? '#FFFFFF' : 'transparent'}`,
         dotStyle: `width:10px;height:10px;border-radius:50%;background:${c};display:inline-block` };
     });
     const mkList = [['oak', 'Sat · Oak Creek'], ['gf', 'Sun · Greenfield']];
-    const markets = mkList.map(([k, label]) => ({ label, onClick: () => this.setState({ market: k, reserved: false }),
+    const markets = mkList.map(([k, label]) => ({ label, pressed: s.market === k, onClick: () => this.setState({ market: k, reserved: false }),
       style: `border:1.5px solid ${s.market === k ? '#1C1B1A' : 'rgba(28,27,26,.14)'};background:${s.market === k ? '#1C1B1A' : 'transparent'};color:${s.market === k ? '#F7F4EC' : '#1C1B1A'};padding:11px 12px;border-radius:12px;font-size:13px;font-weight:600;text-align:left;transition:all .2s` }));
-    const dayStyle = c => `font-size:11.5px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;padding:7px 12px;border-radius:999px;background:${c};color:#F7F4EC`;
+    const dayStyle = (c, fg) => `font-size:11.5px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;padding:7px 12px;border-radius:999px;background:${c};color:${fg}`;
     const venues = [
-      { k: 'oak', day: 'Saturday', hours: '9:00 AM – 1:00 PM', name: 'Oak Creek Farmers Market', place: 'Drexel Town Square · Oak Creek, WI', color: '#D49A3D', parking: 'Free lot off Drexel Ave; overflow along Main St.', booth: 'Black canopy with the white hen, near the fountain.', },
-      { k: 'gf', day: 'Sunday', hours: '10:00 AM – 2:00 PM', name: 'Greenfield Farmers Market', place: 'Konkel Park · Greenfield, WI', color: '#8C1D2F', parking: 'Konkel Park lot via S 51st St; street parking on Layton.', booth: 'East row by the pavilion — follow the toast.', },
-    ].map(v => ({ ...v, dayStyle: dayStyle(v.color), open: s.open[v.k], toggleLabel: s.open[v.k] ? 'Hide Map & Parking' : 'See Map & Parking',
-      mapLabel: `[ map · ${v.place} ]`, toggle: () => this.setState(st => ({ open: { ...st.open, [v.k]: !st.open[v.k] } })) }));
-    const live = p.liveTelemetry !== false;
-    const pct = Math.max(0, Math.min(100, ((s.temp - 32) / (40 - 32)) * 100));
-    const ok = s.temp <= 38;
-    const pulseDot = React.createElement('span', { style: { position: 'relative', width: 8, height: 8, display: 'inline-block' } },
-      React.createElement('span', { style: { position: 'absolute', inset: 0, borderRadius: '50%', background: '#9ad0a0' } }),
-      live ? React.createElement('span', { style: { position: 'absolute', inset: 0, borderRadius: '50%', background: '#9ad0a0', animation: 'thPulse 1.8s ease-out infinite' } }) : null);
+      { k: 'oak', day: 'Saturday', hours: '9:00 AM – 1:00 PM', name: 'Oak Creek Farmers Market', place: 'Drexel Town Square · Oak Creek, WI', color: '#D49A3D', fg: '#1C1B1A', parking: 'Free lot off Drexel Ave; overflow along Main St.', booth: 'Black canopy with the white hen, near the fountain.', },
+      { k: 'gf', day: 'Sunday', hours: '10:00 AM – 2:00 PM', name: 'Greenfield Farmers Market', place: 'Konkel Park · Greenfield, WI', color: '#8C1D2F', fg: '#F7F4EC', parking: 'Konkel Park lot via S 51st St; street parking on Layton.', booth: 'East row by the pavilion — follow the toast.', },
+    ].map(v => ({ ...v, dayStyle: dayStyle(v.color, v.fg), open: s.open[v.k], toggleLabel: s.open[v.k] ? 'Hide Directions & Parking' : 'See Directions & Parking',
+      mapUrl: `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(v.place.replace(' · ', ', '))}`, toggle: () => this.setState(st => ({ open: { ...st.open, [v.k]: !st.open[v.k] } })) }));
+    const summary = `${s.qty} × ${s.flavor} · ${mkList.find(m => m[0] === s.market)[1]}`;
+    const total = `$${s.qty * 9}`;
+    const reserve = () => {
+      const body = `Hi! I'd like to reserve:
+
+${summary}
+Total: ${total}
+
+Name for the label: `;
+      window.location.href = `mailto:hello@thetoastinghen.com?subject=${encodeURIComponent('Tub pre-order')}&body=${encodeURIComponent(body)}`;
+      this.setState({ reserved: true });
+    };
     return {
       isTabs, tabs, menuItems, showSteps: p.showPreorderSteps !== false,
       flavors, markets, qty: s.qty,
       inc: () => this.setState(st => ({ qty: Math.min(12, st.qty + 1), reserved: false })),
       dec: () => this.setState(st => ({ qty: Math.max(1, st.qty - 1), reserved: false })),
-      total: `$${s.qty * 9}`, summary: `${s.qty} × ${s.flavor} · ${mkList.find(m => m[0] === s.market)[1]}`,
-      reserve: () => this.setState({ reserved: true }), reserveLabel: s.reserved ? 'Reserved ✓ — see you Saturday' : 'Reserve for pickup',
-      venues, pulseDot, liveLabel: live ? 'LIVE · ' + (s.tick ? s.tick * 3 + 's ago' : 'syncing') : 'LAST READING',
-      tempStr: s.temp.toFixed(1), status: ok ? 'NOMINAL' : 'ALERT',
-      gaugeStyle: `height:100%;width:${pct}%;border-radius:999px;background:${ok ? 'linear-gradient(90deg,#5F6F52,#9ad0a0)' : '#8C1D2F'};transition:width .8s ease`,
+      total, summary,
+      reserve, reserveLabel: s.reserved ? 'Email opened — press send to confirm' : 'Reserve by email',
+      venues,
     };
   }
 }
