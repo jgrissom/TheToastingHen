@@ -1324,6 +1324,7 @@
                 minmax(min(300px, 100%), 1fr)
               );
               gap: 20px;
+              margin-bottom: 28px;
             "
           >
             <sc-for list="{{ venues }}" as="v" hint-placeholder-count="2">
@@ -1469,6 +1470,54 @@
               </article>
             </sc-for>
           </div>
+
+          <!-- ORDER & ROAM CALLOUT BANNER -->
+          <div
+            style="
+              background: #ece7db;
+              border: 1px solid rgba(28, 27, 26, 0.12);
+              border-radius: 20px;
+              padding: 18px 24px;
+              display: flex;
+              align-items: center;
+              gap: 16px;
+              flex-wrap: wrap;
+            "
+          >
+            <div
+              style="
+                width: 36px;
+                height: 36px;
+                border-radius: 50%;
+                background: #8c1d2f;
+                color: #f7f4ec;
+                display: grid;
+                place-items: center;
+                font-size: 18px;
+                flex: none;
+              "
+            >
+              📱
+            </div>
+            <div style="flex: 1; min-width: 240px">
+              <div
+                style="
+                  font-family: &quot;Outfit&quot;, sans-serif;
+                  font-weight: 600;
+                  font-size: 15px;
+                  color: #1c1b1a;
+                  margin-bottom: 2px;
+                "
+              >
+                On-Site "Order &amp; Roam" · Skip the Stand
+              </div>
+              <div style="font-size: 13.5px; line-height: 1.5; color: #4a4845">
+                Canopy busy? Scan the QR code at our booth to order from your
+                phone and explore the market. We'll text your estimated
+                wait time and ping you the moment your food is ready.
+              </div>
+            </div>
+          </div>
         </section>
 
         <!-- REPOSITIONED SOURCING & ALLERGEN PLEDGE SECTION -->
@@ -1553,8 +1602,9 @@
                   <span style="color: #8c1d2f; font-weight: 700">✓</span>
                   <span
                     ><strong>Whole-Muscle Pulled Poultry:</strong> 70% breast
-                    &amp; 30% thigh meat. Never mechanically separated, zero
-                    artificial binders, phosphates, or starches.</span
+                    &amp; 30% thigh meat. Never mechanically
+                    separated, zero artificial binders, phosphates, or
+                    starches.</span
                   >
                 </div>
                 <div style="display: flex; gap: 12px; align-items: flex-start">
@@ -1653,9 +1703,10 @@
                 "
               >
                 Zero peanuts or tree nuts enter our commissary prep space, our
-                market trailer, or our ingredient chain. No pecans, no walnuts,
-                no exceptions. We review every supplier specification sheet so
-                families can dine with complete confidence.
+                market trailer, or our ingredient chain. No pecans,
+                no walnuts, no exceptions. We review every supplier
+                specification sheet so families can dine with complete
+                confidence.
               </p>
             </div>
 
@@ -2071,12 +2122,7 @@
           const total = `$${s.qty * 9}`;
 
           const reserve = () => {
-            const body = `Hi! I'd like to reserve:
-
-      ${summary}
-      Total: ${total}
-
-      Name for the label: `;
+            const body = `Hi! I'd like to reserve:\n\n${summary}\nTotal: ${total}\n\nName for the label: `;
             window.location.href = `mailto:hello@thetoastinghen.com?subject=${encodeURIComponent('Tub pre-order')}&body=${encodeURIComponent(body)}`;
             this.setState({ reserved: true });
           };
