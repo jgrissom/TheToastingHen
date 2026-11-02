@@ -24,6 +24,36 @@
       content="https://thetoastinghen.com/assets/hero.jpeg"
     />
     <link rel="icon" type="image/svg+xml" href="assets/favicon.svg" />
+
+    <!-- Schema.org JSON-LD Structured Data for Local Restaurant / Food Stand -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "FastFoodRestaurant",
+        "name": "The Toasting Hen",
+        "image": "https://thetoastinghen.com/assets/hero.jpeg",
+        "url": "https://thetoastinghen.com",
+        "telephone": "",
+        "servesCuisine": ["American", "Artisan Sandwiches", "Chicken Salad"],
+        "priceRange": "$$",
+        "hasMenu": "https://thetoastinghen.com/#menu",
+        "openingHoursSpecification": [
+          {
+            "@type": "OpeningHoursSpecification",
+            "dayOfWeek": "Saturday",
+            "opens": "09:00",
+            "closes": "13:00"
+          },
+          {
+            "@type": "OpeningHoursSpecification",
+            "dayOfWeek": "Sunday",
+            "opens": "10:00",
+            "closes": "14:00"
+          }
+        ]
+      }
+    </script>
+
     <script src="./support.js"></script>
   </head>
   <body>
@@ -827,11 +857,60 @@
                   letter-spacing: 0.16em;
                   text-transform: uppercase;
                   color: #d49a3d;
-                  margin-bottom: 14px;
+                  margin-bottom: 12px;
                 "
               >
                 Weekday Pre-Orders
               </div>
+
+              <!-- HIGH-VISIBILITY COUNTDOWN CLOCK BOX -->
+              <div
+                style="
+                  background: rgba(247, 244, 236, 0.07);
+                  border: 1px solid rgba(212, 154, 61, 0.3);
+                  border-radius: 18px;
+                  padding: 16px 20px;
+                  margin-bottom: 20px;
+                "
+              >
+                <div
+                  style="
+                    display: flex;
+                    align-items: center;
+                    justify-content: space-between;
+                    gap: 12px;
+                    flex-wrap: wrap;
+                    margin-bottom: 10px;
+                  "
+                >
+                  <span style="{{ cutoffBadgeStyle }}"
+                    >{{ cutoffBadgeText }}</span
+                  >
+                  <span
+                    style="
+                      font-size: 11px;
+                      font-family: ui-monospace, monospace;
+                      color: rgba(247, 244, 236, 0.6);
+                      text-transform: uppercase;
+                      letter-spacing: 0.08em;
+                    "
+                    >{{ timerSubtext }}</span
+                  >
+                </div>
+                <div
+                  style="
+                    font-family: &quot;Outfit&quot;, sans-serif;
+                    font-weight: 700;
+                    font-size: clamp(24px, 3.2vw, 36px);
+                    letter-spacing: 0.02em;
+                    color: #f7f4ec;
+                    line-height: 1.1;
+                  "
+                >
+                  {{ countdownString }}
+                </div>
+              </div>
+
               <h2
                 style="
                   font-family: &quot;Outfit&quot;, sans-serif;
@@ -863,9 +942,7 @@
                   text-wrap: pretty;
                 "
               >
-                Reserve your tubs by Wednesday 11:59 PM. We prep Friday at
-                Common Cookhouse and hold at ≤ 38°F. Pick up chilled and labeled
-                at the market booth—skip the line.
+                {{ cutoffExplainer }}
               </p>
               <sc-if value="{{ showSteps }}" hint-placeholder-val="{{ true }}">
                 <ol
@@ -1180,7 +1257,7 @@
                 font-size: clamp(32px, 4vw, 48px);
                 letter-spacing: -0.02em;
                 line-height: 1.05;
-                margin: 0;
+                margin: 0 0 16px;
               "
             >
               Two markets.
@@ -1194,10 +1271,48 @@
               >
               weekend.
             </h2>
-            <p style="margin: 12px 0 0; font-size: 14.5px; color: #4a4845">
-              Warm butter toast &amp; cold cherry lemonade at 9:00 AM · Chicken
-              salad tartines launch at 9:30 AM.
-            </p>
+
+            <!-- Morning Timeline Strip -->
+            <div
+              style="
+                display: inline-flex;
+                gap: 14px;
+                flex-wrap: wrap;
+                background: #fbf9f5;
+                border: 1px solid rgba(28, 27, 26, 0.1);
+                border-radius: 16px;
+                padding: 12px 18px;
+                font-size: 13.5px;
+                color: #4a4845;
+                align-items: center;
+              "
+            >
+              <div style="display: flex; align-items: center; gap: 8px">
+                <span
+                  style="
+                    width: 8px;
+                    height: 8px;
+                    border-radius: 50%;
+                    background: #d49a3d;
+                  "
+                ></span
+                ><strong>9:00 AM Open:</strong> Warm Butter Toast, Batons &amp;
+                Cherry Lemonade
+              </div>
+              <span style="color: rgba(28, 27, 26, 0.2)">|</span>
+              <div style="display: flex; align-items: center; gap: 8px">
+                <span
+                  style="
+                    width: 8px;
+                    height: 8px;
+                    border-radius: 50%;
+                    background: #8c1d2f;
+                  "
+                ></span
+                ><strong>9:30 AM Drop:</strong> Full Chicken Salad Tartines
+                &amp; Pre-Order Tubs
+              </div>
+            </div>
           </div>
           <div
             style="
@@ -1282,13 +1397,36 @@
                       animation: thRise 0.35s ease both;
                     "
                   >
-                    <a
-                      href="{{ v.mapUrl }}"
-                      target="_blank"
-                      rel="noopener"
-                      style="font-size: 14px; font-weight: 600; color: #8c1d2f"
-                      >Open in Google Maps →</a
+                    <div
+                      style="
+                        display: flex;
+                        gap: 16px;
+                        align-items: center;
+                        flex-wrap: wrap;
+                      "
                     >
+                      <a
+                        href="{{ v.mapUrl }}"
+                        target="_blank"
+                        rel="noopener"
+                        style="
+                          font-size: 14px;
+                          font-weight: 600;
+                          color: #8c1d2f;
+                        "
+                        >Open in Google Maps →</a
+                      >
+                      <a
+                        href="{{ v.calUrl }}"
+                        download="toasting-hen-market.ics"
+                        style="
+                          font-size: 13.5px;
+                          font-weight: 600;
+                          color: #5f6f52;
+                        "
+                        >Add to Calendar (.ics)</a
+                      >
+                    </div>
                     <div
                       style="
                         display: grid;
@@ -1337,7 +1475,7 @@
           style="
             max-width: 1200px;
             margin: 0 auto;
-            padding: 0 24px 88px;
+            padding: 0 24px 80px;
             display: grid;
             grid-template-columns: repeat(
               auto-fit,
@@ -1511,6 +1649,101 @@
           </div>
         </section>
 
+        <!-- VIP SMS / HEN HOUSE LIST CAPTURE -->
+        <section
+          style="max-width: 1200px; margin: 0 auto; padding: 0 24px 88px"
+        >
+          <div
+            style="
+              background: #fbf9f5;
+              border: 1px solid rgba(28, 27, 26, 0.1);
+              border-radius: 28px;
+              padding: clamp(28px, 4vw, 48px);
+              display: grid;
+              grid-template-columns: repeat(
+                auto-fit,
+                minmax(min(280px, 100%), 1fr)
+              );
+              gap: 32px;
+              align-items: center;
+            "
+          >
+            <div>
+              <div
+                style="
+                  font-size: 12px;
+                  font-weight: 600;
+                  letter-spacing: 0.14em;
+                  text-transform: uppercase;
+                  color: #8c1d2f;
+                  margin-bottom: 8px;
+                "
+              >
+                The Hen House VIP Club
+              </div>
+              <h3
+                style="
+                  font-family: &quot;Outfit&quot;, sans-serif;
+                  font-weight: 600;
+                  font-size: 28px;
+                  letter-spacing: -0.02em;
+                  margin: 0 0 10px;
+                  line-height: 1.15;
+                "
+              >
+                Get weekend drop alerts &amp; secret menu tartines.
+              </h3>
+              <p
+                style="
+                  margin: 0;
+                  font-size: 14.5px;
+                  line-height: 1.55;
+                  color: #4a4845;
+                  max-width: 440px;
+                "
+              >
+                Join our VIP list. We send one quick text on Friday mornings
+                with weekly specials, pre-order cutoffs, and pop-up locations.
+              </p>
+            </div>
+            <div style="display: flex; gap: 10px; flex-wrap: wrap">
+              <input
+                type="tel"
+                placeholder="Enter cell number (e.g. 414-555-0199)"
+                style="
+                  flex: 1;
+                  min-width: 240px;
+                  padding: 14px 18px;
+                  border-radius: 999px;
+                  border: 1.5px solid rgba(28, 27, 26, 0.2);
+                  background: #ffffff;
+                  font-family: inherit;
+                  font-size: 14.5px;
+                  color: #1c1b1a;
+                "
+                onInput="{{ onPhoneInput }}"
+                value="{{ phoneVal }}"
+              />
+              <button
+                onClick="{{ submitPhone }}"
+                style="
+                  background: #1c1b1a;
+                  color: #f7f4ec;
+                  border: 0;
+                  padding: 14px 26px;
+                  border-radius: 999px;
+                  font-weight: 600;
+                  font-size: 14.5px;
+                  transition: background 0.2s;
+                "
+                style-hover="background:#8C1D2F"
+              >
+                {{ phoneSubmitLabel }}
+              </button>
+            </div>
+          </div>
+        </section>
+
         <!-- FOOTER -->
         <footer
           style="
@@ -1667,12 +1900,80 @@
       data-props='{"menuLayout":{"editor":"enum","options":["tabs","grid"],"default":"tabs","tsType":"&apos;tabs&apos;|&apos;grid&apos;","section":"Menu"},"showPreorderSteps":{"editor":"boolean","default":true,"tsType":"boolean","section":"Pre-Order"}}'
     >
       class Component extends DCLogic {
-        state = { tab: 'tartines', qty: 2, flavor: 'The Hen House', market: 'oak', open: { oak: false, gf: false }, reserved: false };
+        state = {
+          tab: 'tartines',
+          qty: 2,
+          flavor: 'The Hen House',
+          market: 'oak',
+          open: { oak: false, gf: false },
+          reserved: false,
+          phone: '',
+          phoneSubmitted: false,
+          now: new Date()
+        };
+
+        componentDidMount() {
+          this.timer = setInterval(() => {
+            this.setState({ now: new Date() });
+          }, 1000);
+        }
+
+        componentWillUnmount() {
+          if (this.timer) clearInterval(this.timer);
+        }
+
         renderVals() {
           const s = this.state, p = this.props;
           const isTabs = (p.menuLayout ?? 'tabs') === 'tabs';
           const tagStyle = (bg, fg) => `font-size:11px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;padding:6px 10px;border-radius:999px;background:${bg};color:${fg}`;
           const T = { tartines: tagStyle('rgba(140,29,47,.1)', '#8C1D2F'), toast: tagStyle('rgba(212,154,61,.18)', '#8a5f1c'), bev: tagStyle('rgba(140,29,47,.12)', '#8C1D2F') };
+
+          // Live Wednesday 11:59:59 PM Cutoff Countdown Math
+          const current = s.now;
+          const day = current.getDay(); // 0 = Sun, 1 = Mon, 2 = Tue, 3 = Wed, 4 = Thu, 5 = Fri, 6 = Sat
+
+          // Calculate target Wednesday 23:59:59 of the current ordering cycle
+          let targetWednesday = new Date(current);
+          let diffDays = (3 - day + 7) % 7;
+          // Pre-orders active Monday (1) through Wednesday (3)
+          const isOrderingWindowOpen = (day >= 1 && day <= 3);
+
+          let countdownString = "";
+          let timerSubtext = "";
+
+          if (isOrderingWindowOpen) {
+            targetWednesday.setDate(current.getDate() + diffDays);
+            targetWednesday.setHours(23, 59, 59, 999);
+            const diffMs = Math.max(0, targetWednesday - current);
+            const d = Math.floor(diffMs / (1000 * 60 * 60 * 24));
+            const h = Math.floor((diffMs / (1000 * 60 * 60)) % 24);
+            const m = Math.floor((diffMs / (1000 * 60)) % 60);
+            const sec = Math.floor((diffMs / 1000) % 60);
+            countdownString = `${d}d ${String(h).padStart(2,'0')}h ${String(m).padStart(2,'0')}m ${String(sec).padStart(2,'0')}s remaining`;
+            timerSubtext = "Closes Wednesday 11:59 PM CST";
+          } else {
+            // Calculate countdown to next Monday 08:00 AM CST
+            let nextMonday = new Date(current);
+            let daysUntilMon = ((1 - day + 7) % 7) || 7;
+            nextMonday.setDate(current.getDate() + daysUntilMon);
+            nextMonday.setHours(8, 0, 0, 0);
+            const diffMs = Math.max(0, nextMonday - current);
+            const d = Math.floor(diffMs / (1000 * 60 * 60 * 24));
+            const h = Math.floor((diffMs / (1000 * 60 * 60)) % 24);
+            const m = Math.floor((diffMs / (1000 * 60)) % 60);
+            const sec = Math.floor((diffMs / 1000) % 60);
+            countdownString = `${d}d ${String(h).padStart(2,'0')}h ${String(m).padStart(2,'0')}m ${String(sec).padStart(2,'0')}s until window opens`;
+            timerSubtext = "Next Window Opens Monday 8 AM";
+          }
+
+          const cutoffBadgeText = isOrderingWindowOpen ? "● Window Active" : "○ Closed for Friday Prep";
+          const cutoffBadgeStyle = isOrderingWindowOpen
+            ? "display:inline-flex;padding:5px 12px;border-radius:999px;background:rgba(95,111,82,.3);color:#A3B899;font-size:11.5px;font-weight:700;letter-spacing:.05em"
+            : "display:inline-flex;padding:5px 12px;border-radius:999px;background:rgba(212,154,61,.25);color:#D49A3D;font-size:11.5px;font-weight:700;letter-spacing:.05em";
+          const cutoffExplainer = isOrderingWindowOpen
+            ? "Orders close Wednesday at 11:59 PM. We prep Friday at Common Cookhouse and hold at ≤ 38°F. Pick up chilled and labeled at the market booth—skip the line."
+            : "Our kitchen is prepping Friday batches. Pre-orders for next weekend re-open Monday morning. Walk-up tubs will still be available at the booth while supplies last!";
+
           const all = [
             { cat: 'tartines', tag: 'Classic', name: 'The Hen House', price: '$11', desc: '70/30 clean-label pulled chicken, crisp celery brunoise, scallions, rich house emulsion, cracked black pepper, plain butter crust.', note: 'Open-faced tartine' },
             { cat: 'tartines', tag: 'Savory', name: 'The Rooster Booster', price: '$11', desc: 'Master poultry base infused with Spanish smoked paprika, chipotle, cumin, and garlic warmth, folded with crisp celery and scallions.', note: 'Open-faced tartine' },
@@ -1684,12 +1985,14 @@
             { cat: 'bev', tag: 'Scratch Pour', name: 'Craft Tart Cherry Lemonade', price: '$5', desc: 'Fresh lemon zest and cane sugar lemonade layered over scratch Montmorency tart cherry reduction. 16 oz, over ice.', note: '16 oz · scratch reduction' },
             { cat: 'bev', tag: 'Combo Pair', name: 'The Hen Combo Pairing', price: '$15', desc: 'Pair your 16 oz Craft Tart Cherry Lemonade with The Hen House, Rooster Booster, or Chick Magnet.', note: 'Save $1 · full meal' },
           ];
+
           const menuItems = (isTabs ? all.filter(m => m.cat === s.tab) : all).map(m => ({ ...m, tagStyle: T[m.cat] }));
           const tabBase = 'border:0;padding:10px 18px;border-radius:999px;font-size:13.5px;font-weight:600;transition:background .2s,color .2s;';
           const tabs = [['tartines', 'The Tartines'], ['toast', 'Toast & Batons'], ['bev', 'Craft Lemonade']].map(([k, label]) => ({
             label, pressed: s.tab === k, onClick: () => this.setState({ tab: k }),
             style: tabBase + (s.tab === k ? 'background:#1C1B1A;color:#F7F4EC' : 'background:transparent;color:#1C1B1A'),
           }));
+
           const fl = [['The Hen House', 'Classic', '#D49A3D'], ['The Rooster Booster', 'Savory', '#5F6F52'], ['The Chick Magnet', 'Specialty', '#8C1D2F']];
           const flavors = fl.map(([name, sub, c]) => {
             const on = s.flavor === name;
@@ -1697,17 +2000,33 @@
               style: `display:flex;justify-content:space-between;align-items:center;gap:12px;width:100%;text-align:left;padding:13px 16px;border-radius:14px;font-size:14.5px;font-weight:600;color:#1C1B1A;transition:border-color .2s,background .2s;border:1.5px solid ${on ? '#1C1B1A' : 'rgba(28,27,26,.14)'};background:${on ? '#FFFFFF' : 'transparent'}`,
               dotStyle: `width:10px;height:10px;border-radius:50%;background:${c};display:inline-block` };
           });
+
           const mkList = [['oak', 'Sat · Oak Creek'], ['gf', 'Sun · Greenfield']];
           const markets = mkList.map(([k, label]) => ({ label, pressed: s.market === k, onClick: () => this.setState({ market: k, reserved: false }),
             style: `border:1.5px solid ${s.market === k ? '#1C1B1A' : 'rgba(28,27,26,.14)'};background:${s.market === k ? '#1C1B1A' : 'transparent'};color:${s.market === k ? '#F7F4EC' : '#1C1B1A'};padding:11px 12px;border-radius:12px;font-size:13px;font-weight:600;text-align:left;transition:all .2s` }));
+
           const dayStyle = (c, fg) => `font-size:11.5px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;padding:7px 12px;border-radius:999px;background:${c};color:${fg}`;
+
+          // Quick Calendar .ics Data Link Maker
+          const makeIcs = (title, desc, loc) => "data:text/calendar;charset=utf8," + encodeURIComponent(`BEGIN:VCALENDAR\nVERSION:2.0\nBEGIN:VEVENT\nSUMMARY:${title}\nDESCRIPTION:${desc}\nLOCATION:${loc}\nEND:VEVENT\nEND:VCALENDAR`);
+
           const venues = [
-            { k: 'oak', day: 'Saturday', hours: '9:00 AM – 1:00 PM', name: 'Oak Creek Farmers Market', place: 'Drexel Town Square · Oak Creek, WI', color: '#D49A3D', fg: '#1C1B1A', parking: 'Free lot off Drexel Ave; overflow along Main St.', booth: 'Black canopy with the white hen, near the fountain.', },
-            { k: 'gf', day: 'Sunday', hours: '10:00 AM – 2:00 PM', name: 'Greenfield Farmers Market', place: 'Konkel Park · Greenfield, WI', color: '#8C1D2F', fg: '#F7F4EC', parking: 'Konkel Park lot via S 51st St; street parking on Layton.', booth: 'East row by the pavilion — follow the toast.', },
+            {
+              k: 'oak', day: 'Saturday', hours: '9:00 AM – 1:00 PM', name: 'Oak Creek Farmers Market', place: 'Drexel Town Square · Oak Creek, WI', color: '#D49A3D', fg: '#1C1B1A',
+              parking: 'Free lot off Drexel Ave; overflow along Main St.', booth: 'Black canopy with the white hen, near the fountain.',
+              calUrl: makeIcs("The Toasting Hen @ Oak Creek", "Scratch toast, tartines, and tart cherry lemonade.", "Drexel Town Square, Oak Creek, WI")
+            },
+            {
+              k: 'gf', day: 'Sunday', hours: '10:00 AM – 2:00 PM', name: 'Greenfield Farmers Market', place: 'Konkel Park · Greenfield, WI', color: '#8C1D2F', fg: '#F7F4EC',
+              parking: 'Konkel Park lot via S 51st St; street parking on Layton.', booth: 'East row by the pavilion — follow the toast.',
+              calUrl: makeIcs("The Toasting Hen @ Greenfield", "Scratch toast, tartines, and tart cherry lemonade.", "Konkel Park, Greenfield, WI")
+            },
           ].map(v => ({ ...v, dayStyle: dayStyle(v.color, v.fg), open: s.open[v.k], toggleLabel: s.open[v.k] ? 'Hide Directions & Parking' : 'See Directions & Parking',
             mapUrl: `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(v.place.replace(' · ', ', '))}`, toggle: () => this.setState(st => ({ open: { ...st.open, [v.k]: !st.open[v.k] } })) }));
+
           const summary = `${s.qty} × ${s.flavor} · ${mkList.find(m => m[0] === s.market)[1]}`;
           const total = `$${s.qty * 9}`;
+
           const reserve = () => {
             const body = `Hi! I'd like to reserve:
 
@@ -1718,14 +2037,21 @@
             window.location.href = `mailto:hello@thetoastinghen.com?subject=${encodeURIComponent('Tub pre-order')}&body=${encodeURIComponent(body)}`;
             this.setState({ reserved: true });
           };
+
           return {
             isTabs, tabs, menuItems, showSteps: p.showPreorderSteps !== false,
+            cutoffBadgeText, cutoffBadgeStyle, cutoffExplainer,
+            countdownString, timerSubtext,
             flavors, markets, qty: s.qty,
             inc: () => this.setState(st => ({ qty: Math.min(12, st.qty + 1), reserved: false })),
             dec: () => this.setState(st => ({ qty: Math.max(1, st.qty - 1), reserved: false })),
             total, summary,
             reserve, reserveLabel: s.reserved ? 'Email opened — press send to confirm' : 'Reserve by email',
             venues,
+            phoneVal: s.phone,
+            onPhoneInput: (e) => this.setState({ phone: e.target.value }),
+            submitPhone: () => this.setState({ phoneSubmitted: true }),
+            phoneSubmitLabel: s.phoneSubmitted ? '✓ You\'re on the list!' : 'Get Drop Alerts'
           };
         }
       }
