@@ -903,13 +903,25 @@
                   style="
                     font-family: &quot;Outfit&quot;, sans-serif;
                     font-weight: 700;
-                    font-size: clamp(24px, 3.2vw, 36px);
+                    font-size: clamp(22px, 3.2vw, 36px);
                     letter-spacing: 0.02em;
                     color: #f7f4ec;
                     line-height: 1.1;
+                    font-variant-numeric: tabular-nums;
+                    white-space: nowrap;
                   "
                 >
                   {{ countdownString }}
+                </div>
+                <div
+                  style="
+                    margin-top: 4px;
+                    font-size: 13px;
+                    font-weight: 500;
+                    color: rgba(247, 244, 236, 0.72);
+                  "
+                >
+                  {{ countdownLabel }}
                 </div>
               </div>
 
@@ -2034,6 +2046,7 @@
           const isOrderingWindowOpen = (day >= 1 && day <= 3);
 
           let countdownString = "";
+          let countdownLabel = "";
           let timerSubtext = "";
 
           if (isOrderingWindowOpen) {
@@ -2044,7 +2057,8 @@
             const h = Math.floor((diffMs / (1000 * 60 * 60)) % 24);
             const m = Math.floor((diffMs / (1000 * 60)) % 60);
             const sec = Math.floor((diffMs / 1000) % 60);
-            countdownString = `${d}d ${String(h).padStart(2,'0')}h ${String(m).padStart(2,'0')}m ${String(sec).padStart(2,'0')}s remaining`;
+            countdownString = `${d}d ${String(h).padStart(2,'0')}h ${String(m).padStart(2,'0')}m ${String(sec).padStart(2,'0')}s`;
+            countdownLabel = "remaining";
             timerSubtext = "Closes Wednesday 11:59 PM CST";
           } else {
             let nextMonday = new Date(current);
@@ -2056,7 +2070,8 @@
             const h = Math.floor((diffMs / (1000 * 60 * 60)) % 24);
             const m = Math.floor((diffMs / (1000 * 60)) % 60);
             const sec = Math.floor((diffMs / 1000) % 60);
-            countdownString = `${d}d ${String(h).padStart(2,'0')}h ${String(m).padStart(2,'0')}m ${String(sec).padStart(2,'0')}s until window opens`;
+            countdownString = `${d}d ${String(h).padStart(2,'0')}h ${String(m).padStart(2,'0')}m ${String(sec).padStart(2,'0')}s`;
+            countdownLabel = "until window opens";
             timerSubtext = "Next Window Opens Monday 8 AM";
           }
 
@@ -2130,7 +2145,7 @@
           return {
             isTabs, tabs, menuItems, showSteps: p.showPreorderSteps !== false,
             cutoffBadgeText, cutoffBadgeStyle, cutoffExplainer,
-            countdownString, timerSubtext,
+            countdownString, countdownLabel, timerSubtext,
             flavors, markets, qty: s.qty,
             inc: () => this.setState(st => ({ qty: Math.min(12, st.qty + 1), reserved: false })),
             dec: () => this.setState(st => ({ qty: Math.max(1, st.qty - 1), reserved: false })),
