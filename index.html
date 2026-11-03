@@ -73,7 +73,7 @@
             text-decoration: none;
           }
           a:hover {
-            color: #8c1d2f;
+            color: #7e2233;
           }
           button {
             font-family: inherit;
@@ -93,12 +93,25 @@
             scroll-padding-top: 88px;
           }
           :focus-visible {
-            outline: 2px solid #8c1d2f;
+            outline: 2px solid #7e2233;
             outline-offset: 2px;
+          }
+          .th-cta-short {
+            display: none;
           }
           @media (max-width: 720px) {
             .th-nav-link {
               display: none;
+            }
+            .th-cta {
+              padding: 10px 14px !important;
+              font-size: 14px;
+            }
+            .th-cta-full {
+              display: none;
+            }
+            .th-cta-short {
+              display: inline;
             }
           }
           @media (prefers-reduced-motion: reduce) {
@@ -191,14 +204,15 @@
             >
               <a class="th-nav-link" href="#menu">Menu</a>
               <a class="th-nav-link" href="#lemonade">Craft Lemonade</a>
-              <a class="th-nav-link" href="#tubs">Pre-Order Tubs</a>
               <a class="th-nav-link" href="#circuit">The Weekly Drop</a>
               <a class="th-nav-link" href="#sourcing"
                 >Sourcing &amp; Allergen Info</a
               >
               <a
+                class="th-cta"
                 href="#tubs"
                 style="
+                  white-space: nowrap;
                   background: #1c1b1a;
                   color: #f7f4ec;
                   padding: 11px 20px;
@@ -208,8 +222,9 @@
                     background 0.2s,
                     transform 0.2s;
                 "
-                style-hover="background:#8C1D2F;transform:translateY(-1px)"
-                >Order Ahead</a
+                style-hover="background:#541220;transform:translateY(-1px)"
+                ><span class="th-cta-full">Reserve Chicken Salad</span
+                ><span class="th-cta-short">Reserve</span></a
               >
             </div>
           </nav>
@@ -272,9 +287,9 @@
                   gap: 8px;
                   padding: 8px 14px;
                   border-radius: 999px;
-                  border: 1px solid rgba(140, 29, 47, 0.35);
-                  background: rgba(140, 29, 47, 0.08);
-                  color: #8c1d2f;
+                  border: 1px solid rgba(84, 18, 32, 0.35);
+                  background: rgba(84, 18, 32, 0.08);
+                  color: #7e2233;
                   font-size: 12.5px;
                   font-weight: 600;
                   letter-spacing: 0.02em;
@@ -284,7 +299,7 @@
                     width: 7px;
                     height: 7px;
                     border-radius: 50%;
-                    background: #8c1d2f;
+                    background: #7e2233;
                     display: inline-block;
                   "
                 ></span
@@ -307,7 +322,7 @@
                   font-family: &quot;Instrument Serif&quot;, serif;
                   font-style: italic;
                   font-weight: 400;
-                  color: #8c1d2f;
+                  color: #7e2233;
                 "
                 >Cold tart cherry</em
               >
@@ -323,10 +338,9 @@
                 text-wrap: pretty;
               "
             >
-              Machine-sliced Colectivo Troubadour sourdough toasted golden on a
-              Hatco conveyor, paired with clean-label chicken salad and
-              hand-shaken 16 oz lemonade layered over scratch Montmorency cherry
-              reduction.
+              Colectivo Troubadour sourdough, toasted golden to order and paired
+              with clean-label chicken salad and hand-shaken 16 oz lemonade
+              layered over scratch Montmorency cherry reduction.
             </p>
             <div style="display: flex; gap: 12px; flex-wrap: wrap">
               <a
@@ -343,13 +357,13 @@
                     box-shadow 0.2s;
                 "
                 style-hover="transform:translateY(-2px);box-shadow:0 10px 24px -10px rgba(212,154,61,.7)"
-                >Reserve 8 oz Retail Tubs</a
+                >Reserve Chicken Salad Tubs</a
               >
               <a
                 href="#lemonade"
                 style="
-                  border: 1.5px solid #8c1d2f;
-                  color: #8c1d2f;
+                  border: 1.5px solid #7e2233;
+                  color: #7e2233;
                   padding: 14px 24px;
                   border-radius: 999px;
                   font-weight: 600;
@@ -358,7 +372,7 @@
                     background 0.2s,
                     color 0.2s;
                 "
-                style-hover="background:#8C1D2F;color:#F7F4EC"
+                style-hover="background:#541220;color:#F7F4EC"
                 >Explore The Lemonade</a
               >
             </div>
@@ -380,7 +394,7 @@
                 width: 56%;
                 height: 56%;
                 border-radius: 32px;
-                background: #d49a3d;
+                background: #7e2233;
                 opacity: 0.9;
                 z-index: 0;
               "
@@ -446,7 +460,7 @@
                 >
                   The Hen Combo · $15
                 </div>
-                <div style="font-size: 12px; color: #8c1d2f; font-weight: 600">
+                <div style="font-size: 12px; color: #7e2233; font-weight: 600">
                   Any Tartine + 16 oz Cherry Lemonade
                 </div>
               </div>
@@ -516,7 +530,7 @@
                   font-weight: 600;
                   letter-spacing: 0.16em;
                   text-transform: uppercase;
-                  color: #8c1d2f;
+                  color: #7e2233;
                   margin-bottom: 12px;
                 "
               >
@@ -671,7 +685,7 @@
         >
           <div
             style="
-              background: #8c1d2f;
+              background: #541220;
               color: #f7f4ec;
               border-radius: 32px;
               padding: clamp(28px, 5vw, 56px);
@@ -1272,7 +1286,7 @@
                   onClick="{{ reserve }}"
                   style="
                     width: 100%;
-                    background: #8c1d2f;
+                    background: #7e2233;
                     color: #f7f4ec;
                     border: 0;
                     padding: 14px 22px;
@@ -1283,7 +1297,7 @@
                       background 0.2s,
                       transform 0.2s;
                   "
-                  style-hover="background:#6f1424;transform:translateY(-1px)"
+                  style-hover="background:#541220;transform:translateY(-1px)"
                 >
                   {{ reserveLabel }}
                 </button>
@@ -1358,7 +1372,7 @@
                     height: 8px;
                     margin-top: 6px;
                     border-radius: 50%;
-                    background: #8c1d2f;
+                    background: #7e2233;
                   "
                 ></span
                 ><strong style="flex: none">{{ dropLabel }}:</strong> Full Chicken Salad Tartines
@@ -1475,7 +1489,7 @@
                 width: 36px;
                 height: 36px;
                 border-radius: 50%;
-                background: #8c1d2f;
+                background: #7e2233;
                 display: grid;
                 place-items: center;
                 flex: none;
@@ -1554,7 +1568,7 @@
                   font-weight: 600;
                   letter-spacing: 0.16em;
                   text-transform: uppercase;
-                  color: #8c1d2f;
+                  color: #7e2233;
                   margin-bottom: 12px;
                 "
               >
@@ -1597,14 +1611,14 @@
                 "
               >
                 <div style="display: flex; gap: 12px; align-items: flex-start">
-                  <span style="color: #8c1d2f; font-weight: 700">✓</span>
+                  <span style="color: #7e2233; font-weight: 700">✓</span>
                   <span
                     ><strong>Whole-Muscle Pulled Chicken:</strong> 70/30 breast and
                     thigh, clean-label, no fillers or binders.</span
                   >
                 </div>
                 <div style="display: flex; gap: 12px; align-items: flex-start">
-                  <span style="color: #8c1d2f; font-weight: 700">✓</span>
+                  <span style="color: #7e2233; font-weight: 700">✓</span>
                   <span
                     ><strong>Door County Montmorency Tart Cherries:</strong> Pure
                     scratch reduction simmered with cane sugar and lemon
@@ -1612,7 +1626,7 @@
                   >
                 </div>
                 <div style="display: flex; gap: 12px; align-items: flex-start">
-                  <span style="color: #8c1d2f; font-weight: 700">✓</span>
+                  <span style="color: #7e2233; font-weight: 700">✓</span>
                   <span
                     ><strong>Colectivo Troubadour Sourdough:</strong> Batards
                     toasted crisp to order.</span
@@ -1768,7 +1782,7 @@
                   font-weight: 600;
                   letter-spacing: 0.14em;
                   text-transform: uppercase;
-                  color: #8c1d2f;
+                  color: #7e2233;
                   margin-bottom: 8px;
                 "
               >
@@ -1829,7 +1843,7 @@
                   font-size: 14.5px;
                   transition: background 0.2s;
                 "
-                style-hover="background:#8C1D2F"
+                style-hover="background:#541220"
               >
                 {{ phoneSubmitLabel }}
               </button>
@@ -2016,7 +2030,7 @@
           const s = this.state, p = this.props;
           const isTabs = (p.menuLayout ?? 'tabs') === 'tabs';
           const tagStyle = (bg, fg) => `font-size:11px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;padding:6px 10px;border-radius:999px;background:${bg};color:${fg}`;
-          const T = { tartines: tagStyle('rgba(140,29,47,.1)', '#8C1D2F'), toast: tagStyle('rgba(212,154,61,.18)', '#8a5f1c'), bev: tagStyle('rgba(140,29,47,.12)', '#8C1D2F') };
+          const T = { tartines: tagStyle('rgba(84,18,32,.1)', '#7E2233'), toast: tagStyle('rgba(212,154,61,.18)', '#8a5f1c'), bev: tagStyle('rgba(84,18,32,.12)', '#7E2233') };
 
           // Live Wednesday 11:59:59 PM Cutoff Countdown Math
           const current = s.now;
@@ -2025,13 +2039,20 @@
           // Calculate target Wednesday 23:59:59 of current ordering cycle
           let targetWednesday = new Date(current);
           let diffDays = (3 - day + 7) % 7;
-          const isOrderingWindowOpen = (day >= 1 && day <= 3);
+          // Flip to true once online checkout is live; until then the pre-order
+          // card announces the season launch instead of a weekly countdown.
+          const PREORDERS_LIVE = false;
+          const isOrderingWindowOpen = PREORDERS_LIVE && (day >= 1 && day <= 3);
 
           let countdownString = "";
           let countdownLabel = "";
           let timerSubtext = "";
 
-          if (isOrderingWindowOpen) {
+          if (!PREORDERS_LIVE) {
+            countdownString = "Summer 2027";
+            countdownLabel = "online pre-orders open with our first market";
+            timerSubtext = "";
+          } else if (isOrderingWindowOpen) {
             targetWednesday.setDate(current.getDate() + diffDays);
             targetWednesday.setHours(23, 59, 59, 999);
             const diffMs = Math.max(0, targetWednesday - current);
@@ -2057,11 +2078,13 @@
             timerSubtext = "Next Window Opens Monday 8 AM";
           }
 
-          const cutoffBadgeText = isOrderingWindowOpen ? "● Window Active" : "○ Closed for Friday Prep";
+          const cutoffBadgeText = !PREORDERS_LIVE ? "○ Opens Summer 2027" : isOrderingWindowOpen ? "● Window Active" : "○ Closed for Friday Prep";
           const cutoffBadgeStyle = isOrderingWindowOpen
             ? "display:inline-flex;padding:5px 12px;border-radius:999px;background:rgba(95,111,82,.3);color:#A3B899;font-size:11.5px;font-weight:700;letter-spacing:.05em"
             : "display:inline-flex;padding:5px 12px;border-radius:999px;background:rgba(212,154,61,.25);color:#D49A3D;font-size:11.5px;font-weight:700;letter-spacing:.05em";
-          const cutoffExplainer = isOrderingWindowOpen
+          const cutoffExplainer = !PREORDERS_LIVE
+            ? "Once the season opens, you'll reserve tamper-evident 8 oz deli tubs here by Wednesday at 11:59 PM for guaranteed cooler pick-up at the canopy. Join the list below to hear the moment pre-orders open."
+            : isOrderingWindowOpen
             ? "Skip the risk of an early sell-out. Reserve your tamper-evident 8 oz deli tubs online before Wednesday at 11:59 PM for guaranteed cooler pick-up at the canopy."
             : "Our kitchen is prepping Friday batches. Pre-orders for next weekend re-open Monday morning.";
 
@@ -2077,14 +2100,14 @@
             { cat: 'bev', tag: 'Combo Pair', name: 'The Hen Combo Pairing', price: '$15', desc: 'Pair your 16 oz Craft Tart Cherry Lemonade with The Hen House, Rooster Booster, or Chick Magnet.', note: 'Save $1 · full meal' },
           ];
 
-          const menuItems = (isTabs ? all.filter(m => m.cat === s.tab) : all).map(m => ({ ...m, tagStyle: m.highlight ? tagStyle('#541220', '#FFFFFF') + ';white-space:nowrap' : T[m.cat] }));
+          const menuItems = (isTabs ? all.filter(m => m.cat === s.tab) : all).map(m => ({ ...m, tagStyle: m.highlight ? tagStyle('#7E2233', '#FFFFFF') + ';white-space:nowrap' : T[m.cat] }));
           const tabBase = 'border:0;padding:10px 18px;border-radius:999px;font-size:13.5px;font-weight:600;transition:background .2s,color .2s;';
           const tabs = [['tartines', 'The Tartines'], ['toast', 'Toast & Batons'], ['bev', 'Craft Lemonade']].map(([k, label]) => ({
             label, pressed: s.tab === k, onClick: () => this.setState({ tab: k }),
             style: tabBase + (s.tab === k ? 'background:#1C1B1A;color:#F7F4EC' : 'background:transparent;color:#1C1B1A'),
           }));
 
-          const fl = [['The Hen House', 'Classic', '#D49A3D'], ['The Rooster Booster', 'Savory', '#5F6F52'], ['The Chick Magnet', 'Specialty', '#8C1D2F']];
+          const fl = [['The Hen House', 'Classic', '#D49A3D'], ['The Rooster Booster', 'Savory', '#5F6F52'], ['The Chick Magnet', 'Specialty', '#541220']];
           const flavors = fl.map(([name, sub, c]) => {
             const on = s.flavor === name;
             return { name, sub, pressed: on, onClick: () => this.setState({ flavor: name }),
@@ -2097,7 +2120,7 @@
           const ACTIVE_MARKET = 'gf';
           const MARKETS = {
             gf: {
-              k: 'gf', day: 'Sunday', hours: '10:00 AM – 2:00 PM (or until sold out)', name: 'Greenfield Farmers Market', place: 'Konkel Park · Greenfield, WI', color: '#8C1D2F', fg: '#F7F4EC',
+              k: 'gf', day: 'Sunday', hours: '10:00 AM – 2:00 PM (or until sold out)', name: 'Greenfield Farmers Market', place: 'Konkel Park · Greenfield, WI', color: '#7E2233', fg: '#F7F4EC',
               pickup: 'Sun · Greenfield', footerHours: 'Sun · Greenfield · 10 AM – 2 PM', openLabel: '10:00 AM Open', dropLabel: '10:30 AM Drop',
             },
             oak: {
@@ -2133,7 +2156,7 @@
             dec: () => this.setState(st => ({ qty: Math.max(1, st.qty - 1) })),
             total, summaryItem, summaryMarket,
             openLabel: active.openLabel, dropLabel: active.dropLabel, footerHours: active.footerHours,
-            reserve, reserveLabel: 'Reserve Your Tubs for This Weekend',
+            reserve, reserveLabel: PREORDERS_LIVE ? 'Reserve Your Tubs for This Weekend' : 'Get Pre-Order Alerts',
             venues,
             phoneVal: s.phone,
             onPhoneInput: (e) => this.setState({ phone: e.target.value }),
